@@ -1,0 +1,158 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    background: body
+      linear-gradient(135deg, #f0f4f8, #e6ebf5);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    transition: background 0.4s, color 0.4s;
+  }
+  
+  h1 {
+    text-align: center;
+    color: navy;
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    max-width: 650px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: background 0.4s, box-shadow 0.4s;
+  }
+  
+  /* Dark mode */
+  body.dark-mode {
+    background: linear-gradient(135deg, #121212, #1e1e1e);
+    color: #eaeaea;
+  }
+  
+  .dark-mode .container {
+    background: rgba(30, 30, 30, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .dark-mode h1 {
+    color: #90caf9;
+  }
+  
+  /* Form */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input,
+  textarea,
+  select {
+    margin-bottom: 12px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s, background 0.3s, color 0.3s;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: navy;
+    outline: none;
+  }
+  
+  .dark-mode input,
+  .dark-mode textarea,
+  .dark-mode select {
+    background: #2a2a2a;
+    border: 1px solid #555;
+    color: #fff;
+  }
+  
+  /* Buttons */
+  button {
+    padding: 12px;
+    background: navy;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  button:hover {
+    background: darkblue;
+    transform: scale(1.05);
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  .delete-button {
+    background: crimson;
+  }
+  
+  .delete-button:hover {
+    background: darkred;
+  }
+  
+  .complete-button {
+    background: seagreen;
+  }
+  
+  .complete-button:hover {
+    background: darkgreen;
+  }
+  
+  /* Task list */
+  .task-list {
+    margin-top: 20px;
+  }
+  
+  .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+    transition: background 0.4s, color 0.4s, transform 0.2s;
+  }
+  
+  .task:hover {
+    transform: scale(1.02);
+  }
+  
+  .task.completed {
+    text-decoration: line-through;
+    background: #e0f7fa;
+    color: gray;
+  }
+  
+  /* Dark mode task */
+  .dark-mode .task {
+    background: rgba(40, 40, 40, 0.9);
+    color: #fff;
+    border: 1px solid #555;
+  }
+  
+  .dark-mode .task.completed {
+    background: rgba(30, 100, 30, 0.85);
+    color: #caffca;
+  }
+  
+  /* Smooth fade-in animation for new tasks */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .task {
+    animation: fadeIn 0.4s ease;
+  }
+  

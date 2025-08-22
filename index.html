@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+
+  <div class="container">
+    <h1>Task Manager</h1>
+    <button id="mode-toggle">Switch to Dark Mode</button>
+
+    <form id="task-form">
+      <input type="text" id="task-name" placeholder="Task Name" required>
+      <textarea id="task-description" placeholder="Description (optional)"></textarea>
+      <input type="text" id="task-category" placeholder="Category (optional)">
+      <input type="date" id="task-due-date" placeholder="Due Date (optional)">
+      <button type="submit">Add Task</button>
+    </form>
+
+    <button id="export-json">Export as JSON</button>
+    <button id="export-pdf">Export as PDF</button>
+    <input type="file" id="import-file" accept=".json" class="hidden">
+
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <div class="task-list" id="task-list"></div>
+  </div>
+
+  <!-- ✅ jsPDF library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
